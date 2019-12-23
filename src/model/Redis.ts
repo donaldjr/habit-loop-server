@@ -8,7 +8,7 @@ const getConnection: () => Promise<Redis> = () =>
     const redisClient = new createConnection({
       host: process.env.REDIS_HOST,
       password: process.env.REDIS_PASSWORD,
-      port: 10981,
+      port: parseInt(process.env.REDIS_PORT),
       connectTimeout: 2000,
       maxRetriesPerRequest: 5,
     });
